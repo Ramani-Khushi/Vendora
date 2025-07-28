@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Wooden Sofa | Vendora</title>
+    <style>
+        /* Same styles reused from the Car product page for consistency */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #d4dfff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #0519a0;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .navbar a,
+        .nav1 a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #0519a0;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover,
+        .nav1 a:hover {
+            color: #f4b400;
+        }
+
+        .nav1 button {
+            padding: 8px 12px;
+            background: #f4b400;
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .nav1 button:hover {
+            background-color: #f4cc4a;
+        }
+
+        .container {
+            margin: 30px;
+            gap: 50px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .left-panel {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .image-box {
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 40px;
+            background-color: #fff;
+        }
+
+        .main-img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .details-box h3 {
+            margin-bottom: 10px;
+            color: #1a237e;
+        }
+
+        .details-box p {
+            margin: 6px 0px;
+        }
+
+        .badge {
+            background: #e3f2fd;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #0d47a1;
+        }
+
+        .description-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .description-box h3 {
+            color: #1a237e;
+            margin-bottom: 10px;
+        }
+
+        .description-box p {
+            margin-bottom: 15px;
+        }
+
+        .right-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .right-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .price-box h2 {
+            color: #1a237e;
+        }
+
+        .price-box p {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .btn {
+            border: none;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            padding: 13px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0px;
+        }
+
+        .btn-call {
+            background: linear-gradient(to right, #f4b400, #1a237e);
+            color: #eee;
+        }
+
+        .btn-message {
+            color: #1a237e;
+            background: white;
+            border: 2px solid #1a237e;
+        }
+
+        .btn-report {
+            background: white;
+            color: red;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .seller-info p {
+            margin: 6px 0;
+        }
+
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 40px 10%;
+            background-color: #d4dfff;
+            color: #333;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            margin-right: 8px;
+        }
+
+        .footer-description {
+            max-width: 250px;
+            font-size: 14px;
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+
+        .footer-columns div {
+            min-width: 150px;
+        }
+
+        .footer-columns strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #0519a0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background: #0519a0;
+            color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Vendora Logo" />
+            <span>Vendora</span>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="post_ad.html">Post Ad</a>
+            <a href="contact_us.html">Contact Us</a>
+            <a href="FAQS.html">FAQs</a>
+        </nav>
+
+        <nav class="nav1">
+            <a href="login.html"><button>Login</button></a>
+            <a href="signup.html"><button>Sign Up</button></a>
+        </nav>
+    </header>
+
+    <!-- Product Content -->
+    <div class="container">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <div class="image-box">
+                <img src="sofa.png" alt="Wooden Sofa" class="main-img" />
+                <div class="details-box">
+                    <br />
+                    <h3>Product Details</h3>
+                    <p><strong>Condition:</strong> <span class="badge">Gently Used</span></p>
+                    <p><strong>Category:</strong> Furniture</p>
+                    <p><strong>Location:</strong> Jaipur</p>
+                    <p><strong>Posted on:</strong> July 9, 2025</p>
+                </div>
+            </div>
+
+            <div class="description-box">
+                <h3>Description</h3>
+                <p>
+                    Solid wooden frame with high-quality foam cushions. Very comfortable for living room use.
+                    Slightly used but in excellent condition.
+                </p>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <div class="right-box price-box">
+                <h2>₹8,000</h2>
+                <p>3-Seater Wooden Sofa</p>
+                <button class="btn btn-call">📞 Call Seller</button>
+                <button class="btn btn-message">✉️ Send Message</button>
+                <button class="btn-report">🚩 Report this ad</button>
+            </div>
+
+            <div class="right-box seller-info">
+                <h3>Seller Information</h3>
+                <p><strong>Aarti Sharma</strong></p>
+                <p>📞 91234-56789</p>
+                <p>📧 aarti.s@example.com</p>
+            </div>
+
+            <div class="right-box">
+                <h3>Safety Tips</h3>
+                <ul>
+                    <li>Meet in a public place</li>
+                    <li>Inspect the product thoroughly</li>
+                    <li>Never pay in advance</li>
+                    <li>Use secure payment methods</li>
+                    <li>Report suspicious listings</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Vendora Logo" />
+                    <span>Vendora</span>
+                </div>
+                <div class="footer-description">
+                    Your trusted local marketplace for buying and selling everything.
+                </div>
+            </div>
+
+            <div class="footer-columns">
+                <div>
+                    <strong>For Buyers</strong>
+                    <p>Browse Categories</p>
+                    <p>Search Tips</p>
+                    <p>Safety Guide</p>
+                    <p>Mobile App</p>
+                </div>
+                <div>
+                    <strong>For Sellers</strong>
+                    <p>Post Free Ad</p>
+                    <p>Selling Tips</p>
+                    <p>Premium Plans</p>
+                    <p>Success Stories</p>
+                </div>
+                <div>
+                    <strong>Support</strong>
+                    <p>Help Center</p>
+                    <p>Contact Us</p>
+                    <p>Report Issue</p>
+                    <p>Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Vendora. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

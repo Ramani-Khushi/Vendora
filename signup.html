@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | Vendora</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9ff;
+            color: #333;
+        }
+
+        /* Navbar */
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: #d4dfff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #eee;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 35px;
+            font-weight: bold;
+            color: #0519a0;
+        }
+
+        .logo img {
+            height: 100px;
+            margin-right: 10px;
+        }
+
+        .navbar a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #0519a0;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #f4b400;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #003399;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .signup-box {
+            background-color: #ffffff;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .signup-box label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .signup-box input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .signup-box button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to right, #f4b400, #003399);
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .signup-box button:hover {
+            background: #0022aa;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+        }
+
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 40px 10%;
+            background-color: #d4dfff;
+            color: #333;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+        }
+
+        .footer-description {
+            max-width: 250px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 80px;
+        }
+
+        .footer-columns div {
+            min-width: 150px;
+        }
+
+        .footer-columns strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #0519a0;
+        }
+
+        .footer-columns p {
+            font-size: 14px;
+            margin: 6px 0;
+        }
+
+        .footer-bottom {
+            background-color: #0519a0;
+            color: #FFFADD;
+            text-align: center;
+            padding: 15px 10px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .signup-box {
+                padding: 25px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 30px 20px;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+                gap: 30px;
+                margin-top: 20px;
+            }
+
+            .footer-columns div {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Vendora Logo" />
+            <span>Vendora</span>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="post_ad.html">Post Ad</a>
+            <a href="contact_us.html">Contact Us</a>
+            <a href="FAQS.html">FAQs</a>
+        </nav>
+    </header>
+
+    <!-- Sign Up Form -->
+    <main>
+        <h1>Create Account</h1>
+        <div class="subtitle">Join Vendora and start buying & selling</div>
+
+        <form action="/submit.php" class="signup-box">
+            <div>
+                <label for="name">Full Name:</label>
+                <input id="name" type="text" placeholder="Enter your full name" required />
+            </div>
+
+            <div>
+                <label for="Email">Email Address:</label>
+                <input id="Email" type="email" placeholder="Enter your email" required />
+            </div>
+
+            <div>
+                <label for="phone">Phone Number:</label>
+                <input id="phone" type="tel" placeholder="Enter your phone number" required />
+            </div>
+
+            <div>
+                <label for="Password">Password:</label>
+                <input id="Password" type="password" placeholder="Create a password" required />
+            </div>
+
+            <div>
+                <label for="ConfirmPassword">Confirm Password:</label>
+                <input id="ConfirmPassword" type="password" placeholder="Confirm your password" required />
+            </div>
+
+            <button type="submit">Create Account</button>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Vendora Logo" />
+                    <span>Vendora</span>
+                </div>
+                <div class="footer-description">
+                    Your trusted local marketplace for buying and selling everything.
+                </div>
+            </div>
+
+            <div class="footer-columns">
+                <div>
+                    <strong>For Buyers</strong>
+                    <p>Browse Categories</p>
+                    <p>Search Tips</p>
+                    <p>Safety Guide</p>
+                    <p>Mobile App</p>
+                </div>
+                <div>
+                    <strong>For Sellers</strong>
+                    <p>Post Free Ad</p>
+                    <p>Selling Tips</p>
+                    <p>Premium Plans</p>
+                    <p>Success Stories</p>
+                </div>
+                <div>
+                    <strong>Support</strong>
+                    <p>Help Center</p>
+                    <p>Contact Us</p>
+                    <p>Report Issue</p>
+                    <p>Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2025 Vendora. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+
+</html>

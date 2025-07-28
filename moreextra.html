@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>iPhone 12 | Vendora</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background-color: #d4dfff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #0519a0;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .navbar a,
+        .nav1 a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #0519a0;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover,
+        .nav1 a:hover {
+            color: #f4b400;
+        }
+
+        .nav1 button {
+            padding: 8px 12px;
+            background: #f4b400;
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .nav1 button:hover {
+            background-color: #f4cc4a;
+        }
+        .product-container {
+            display: flex;
+            padding: 40px 10%;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .product-container img {
+            width: 100wv;
+            height: 100px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 15px rgba(0, 41, 243, 0.4);
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-details h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .product-details p {
+            margin: 8px 0;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+         .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 40px 10%;
+            background-color: #d4dfff;
+            color: #333;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            margin-right: 8px;
+        }
+
+        .footer-description {
+            max-width: 250px;
+            font-size: 14px;
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+
+        .footer-columns div {
+            min-width: 150px;
+        }
+
+        .footer-columns strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #0519a0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background: #0519a0;
+            color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Vendora Logo">
+            <span>Vendora</span>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="post_ad.html">Post Ad</a>
+            <a href="contact_us.html">Contact Us</a>
+            <a href="FAQS.html">FAQs</a>
+        </nav>
+
+        <nav class="nav1">
+            <a href="login.html"><button>Login</button></a>
+            <a href="signup.html"><button>Sign Up</button></a>
+        </nav>
+    </header>
+
+    <!-- Product Detail -->
+    <main>
+        <h2 style="text-align:center; padding-top: 20px;">Product Details</h2>
+        <div class="product-container">
+            <img src="iphone.png" alt="iPhone 12">
+
+            <div class="product-details">
+                <h3>iPhone 12</h3>
+                <p><strong>Price:</strong> ₹45,000</p>
+                <p><strong>Condition:</strong> Like New</p>
+                <p><strong>Category:</strong> Mobile & Accessories</p>
+                <p><strong>Location:</strong> Mumbai</p>
+                <p><strong>Posted on:</strong> July 9, 2025</p>
+
+                <hr>
+
+                <h4>Description:</h4>
+                <p>This iPhone 12 is in excellent condition with no scratches. Battery health is 90%. Comes with box and
+                    charger.</p>
+
+                <hr>
+
+                <h4>Seller Information:</h4>
+                <p><strong>Name:</strong> Khushi Ramani</p>
+                <p><strong>Email:</strong> khushiramani1805@gmail.com</p>
+                <p><strong>Phone:</strong> 98765-43210</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Vendora Logo" />
+                    <span>Vendora</span>
+                </div>
+                <div class="footer-description">
+                    Your trusted local marketplace for buying and selling everything.
+                </div>
+            </div>
+
+            <div class="footer-columns">
+                <div>
+                    <strong>For Buyers</strong>
+                    <p>Browse Categories</p>
+                    <p>Search Tips</p>
+                    <p>Safety Guide</p>
+                    <p>Mobile App</p>
+                </div>
+                <div>
+                    <strong>For Sellers</strong>
+                    <p>Post Free Ad</p>
+                    <p>Selling Tips</p>
+                    <p>Premium Plans</p>
+                    <p>Success Stories</p>
+                </div>
+                <div>
+                    <strong>Support</strong>
+                    <p>Help Center</p>
+                    <p>Contact Us</p>
+                    <p>Report Issue</p>
+                    <p>Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Vendora. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

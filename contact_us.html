@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Vendora</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9ff;
+            color: #333;
+        }
+
+        .header {
+            background-color: #d4dfff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #0519a0;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .navbar a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #0519a0;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #f4b400;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 32px;
+            margin: 30px 0 10px;
+            color: #0519a0;
+        }
+
+        .subheading {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px 10%;
+            gap: 40px;
+        }
+
+        .info-box {
+            flex: 1;
+            min-width: 280px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-box h3 {
+            margin-bottom: 15px;
+            color: #0519a0;
+        }
+
+        .info-box p {
+            margin: 10px 0;
+            font-size: 15px;
+        }
+
+        .contact-form {
+            flex: 2;
+            min-width: 300px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h3 {
+            margin-bottom: 20px;
+            color: #0519a0;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .send-button {
+            background: linear-gradient(to right, #f4b400, #003399);
+            color: #fff;
+            font-weight: bold;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 160px;
+        }
+
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 40px 10%;
+            background-color: #d4dfff;
+            color: #333;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+        }
+
+        .footer-description {
+            max-width: 250px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 80px;
+        }
+
+        .footer-columns div {
+            min-width: 150px;
+        }
+
+        .footer-columns strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #0519a0;
+        }
+
+        .footer-columns p {
+            font-size: 14px;
+            margin: 6px 0;
+        }
+
+        .footer-bottom {
+            background: #0519a0;;
+            color: #FFFADD;
+            text-align: center;
+            padding: 15px 10px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+                gap: 30px;
+                margin-top: 20px;
+            }
+
+            .footer-columns div {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Vendora Logo" />
+            <span>Vendora</span>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="post_ad.html">Post Ad</a>
+            <a href="contact_us.html">Contact Us</a>
+            <a href="FAQS.html">FAQs</a>
+        </nav>
+    </header>
+
+    <!-- Title -->
+    <h2>Contact Us</h2>
+    <p class="subheading">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+
+    <!-- Contact Section -->
+    <div class="contact-container">
+
+        <!-- Info Box -->
+        <div class="info-box">
+            <h3>📍 Our Location</h3>
+            <p>123 Business District</p>
+            <p>Mumbai, Maharashtra 400001</p>
+            <p>India</p>
+
+            <h3>📞 Phone</h3>
+            <p>+91 98765 43210</p>
+            <p>+91 87654 32109</p>
+
+            <h3>✉️ Email</h3>
+            <p>support@vendora.com</p>
+            <p>info@vendora.com</p>
+        </div>
+
+        <!-- Form Box -->
+        <div class="contact-form">
+            <h3>Send us a Message</h3>
+            <form action="/submit.php" method="POST">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input id="name" type="text" placeholder="Your name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input id="email" type="email" placeholder="Your email" required />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input id="subject" type="text" placeholder="Message subject" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" placeholder="Your message" required></textarea>
+                </div>
+
+                <button type="submit" class="send-button">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Vendora Logo" />
+                    <span>Vendora</span>
+                </div>
+                <div class="footer-description">
+                    Your trusted local marketplace for buying and selling everything.
+                </div>
+            </div>
+
+            <div class="footer-columns">
+                <div>
+                    <strong>For Buyers</strong>
+                    <p>Browse Categories</p>
+                    <p>Search Tips</p>
+                    <p>Safety Guide</p>
+                    <p>Mobile App</p>
+                </div>
+                <div>
+                    <strong>For Sellers</strong>
+                    <p>Post Free Ad</p>
+                    <p>Selling Tips</p>
+                    <p>Premium Plans</p>
+                    <p>Success Stories</p>
+                </div>
+                <div>
+                    <strong>Support</strong>
+                    <p>Help Center</p>
+                    <p>Contact Us</p>
+                    <p>Report Issue</p>
+                    <p>Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2025 Vendora. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>

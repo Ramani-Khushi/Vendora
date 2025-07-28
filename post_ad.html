@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post New Ad | Vendora</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f9f9ff;
+            color: #333;
+        }
+
+        .header {
+            background-color: #d4dfff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #0519a0;
+        }
+
+        .logo img {
+            height: 80px;
+            margin-right: 10px;
+        }
+
+        .navbar a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #0519a0;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #f4b400;
+        }
+
+        .main {
+            padding: 40px 10%;
+        }
+
+        h2 {
+            font-size: 36px;
+            color: #0519a0;
+            margin-bottom: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .left-section,
+        .right-section {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .upload-box {
+            border: 2px dashed #ccc;
+            border-radius: 5px;
+            padding: 40px;
+            text-align: center;
+            color: #999;
+            cursor: pointer;
+        }
+
+        .upload-box:hover {
+            background: #f0f4ff;
+        }
+
+        .submit-btn {
+            background: linear-gradient(to right, #f4b400, #0519a0);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+        }
+
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 40px 10%;
+            background-color: #d4dfff;
+            color: #333;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+        }
+
+        .footer-description {
+            max-width: 250px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 80px;
+        }
+
+        .footer-columns div {
+            min-width: 150px;
+        }
+
+        .footer-columns strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #0519a0;
+        }
+
+        .footer-columns p {
+            font-size: 14px;
+            margin: 6px 0;
+        }
+
+        .footer-bottom {
+            background-color: #0519a0;
+            color: #FFFADD;
+            text-align: center;
+            padding: 15px 10px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            form {
+                flex-direction: column;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+                gap: 30px;
+                margin-top: 20px;
+            }
+
+            .footer-columns div {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Vendora Logo" />
+            <span>Vendora</span>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="post_ad.html">Post Ad</a>
+            <a href="contact_us.html">Contact Us</a>
+            <a href="faqs.html">FAQs</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h2>Post Your Ad</h2>
+        <form action="/submit-ad.php" method="POST" enctype="multipart/form-data">
+            <div class="left-section">
+                <label for="title">Ad Title:</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="">-- Select Category --</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Furniture">Furniture</option>
+                    <option value="Vehicles">Vehicles</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="price">Price (₹):</label>
+                <input type="number" id="price" name="price" required>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="5" placeholder="Enter product details..."
+                    required></textarea>
+
+                <label for="image">Photos:</label>
+                <div class="upload-box">
+                    <input type="file" id="image" name="image" accept="image/*" required style="display: none;">
+                    <p>⬆ Upload</p>
+                </div>
+                <p style="font-size: 12px; color: gray;">Upload up to 5 photos. First photo will be the main image.</p>
+            </div>
+
+            <div class="right-section">
+                <label for="seller">Seller Name:</label>
+                <input type="text" id="seller" name="seller" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <h4>Posting Guidelines:</h4>
+                <ul style="font-size: 14px; margin-bottom: 20px;">
+                    <li> Provide accurate product information</li>
+                    <li> Use clear, high-quality photos</li>
+                    <li> Set a fair and competitive price</li>
+                    <li> Respond promptly to inquiries</li>
+                    <li> No prohibited items allowed</li>
+                </ul>
+
+                <button type="submit" class="submit-btn">Post Ad</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Vendora Logo" />
+                    <span>Vendora</span>
+                </div>
+                <div class="footer-description">
+                    Your trusted local marketplace for buying and selling everything.
+                </div>
+            </div>
+
+            <div class="footer-columns">
+                <div>
+                    <strong>For Buyers</strong>
+                    <p>Browse Categories</p>
+                    <p>Search Tips</p>
+                    <p>Safety Guide</p>
+                    <p>Mobile App</p>
+                </div>
+                <div>
+                    <strong>For Sellers</strong>
+                    <p>Post Free Ad</p>
+                    <p>Selling Tips</p>
+                    <p>Premium Plans</p>
+                    <p>Success Stories</p>
+                </div>
+                <div>
+                    <strong>Support</strong>
+                    <p>Help Center</p>
+                    <p>Contact Us</p>
+                    <p>Report Issue</p>
+                    <p>Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Vendora. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>

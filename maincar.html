@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Marketplace | Product Listing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9ff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background-color: #d4dfff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #0519a0;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .navbar a,
+        .nav1 a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #0519a0;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover,
+        .nav1 a:hover {
+            color: #f4b400;
+        }
+
+        .nav1 button {
+            padding: 8px 12px;
+            background: #f4b400;
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .nav1 button:hover {
+            background-color: #f4cc4a;
+        }
+
+        .main-container {
+            display: flex;
+            gap: 20px;
+            padding: 30px 50px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            height: fit-content;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .sidebar input[type="text"],
+        .sidebar input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .sidebar label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .sidebar input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        /* Product Grid */
+        .products {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .product-card h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .product-card p {
+            color: #0d47a1;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .load-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 20px;
+            border: 2px solid #0d47a1;
+            border-radius: 8px;
+            background: transparent;
+            color: #0d47a1;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .load-btn:hover {
+            background: #0d47a1;
+            color: white;
+        }
+
+        /* Search Header Section */
+        .search-header {
+            padding: 30px 50px 10px;
+        }
+
+        .search-header h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .search-header p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .search-bar-wrapper {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .search-bar-wrapper input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #0519a0;
+            border-radius: 6px;
+            min-width: 250px;
+        }
+
+        .search-bar-wrapper button {
+            padding: 10px 20px;
+            background: linear-gradient(to right, #0519a0, #3b4cca);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .search-bar-wrapper select,
+        .search-bar-wrapper .more-filters {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 40px 10%;
+            background-color: #d4dfff;
+            color: #333;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            margin-right: 8px;
+        }
+
+        .footer-description {
+            max-width: 250px;
+            font-size: 14px;
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+
+        .footer-columns div {
+            min-width: 150px;
+        }
+
+        .footer-columns strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #0519a0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background: #0519a0;
+            color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Vendora Logo">
+            <span>Vendora</span>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="post_ad.html">Post Ad</a>
+            <a href="contact_us.html">Contact Us</a>
+            <a href="FAQS.html">FAQs</a>
+        </nav>
+
+        <nav class="nav1">
+            <a href="login.html"><button>Login</button></a>
+            <a href="signup.html"><button>Sign Up</button></a>
+        </nav>
+    </header>
+
+    <!-- Search Section -->
+    <div class="search-header">
+        <h1>Cars</h1>
+        <p>Find the Best Range Cars in your Budget.</p>
+
+        <div class="search-bar-wrapper">
+            <input type="text" placeholder="Search in Electronics...">
+            <button>Search</button>
+            <select>
+                <option selected disabled>Sort by</option>
+                <option value="low-to-high">Price Low to High</option>
+                <option value="high-to-low">Price High to Low</option>
+                <option value="newest">Newest First</option>
+            </select>
+            <button class="more-filters">More Filters</button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3>Price Range</h3>
+            <input type="number" placeholder="Min">
+            <input type="number" placeholder="Max">
+
+            <h3>Condition</h3>
+            <label><input type="checkbox"> New</label>
+            <label><input type="checkbox"> Like New</label>
+            <label><input type="checkbox"> Good</label>
+            <label><input type="checkbox"> Fair</label>
+
+            <h3>Location</h3>
+            <input type="text" placeholder="Enter location">
+
+            <h3>Brand</h3>
+            <label><input type="checkbox"> Apple</label>
+            <label><input type="checkbox"> Samsung</label>
+            <label><input type="checkbox"> OnePlus</label>
+            <label><input type="checkbox"> Sony</label>
+            <label><input type="checkbox"> Dell</label>
+        </div>
+
+        <!-- product -->
+        <div style="flex: 1;">
+            <p style="margin-bottom: 15px; font-weight: bold;">6 items found</p>
+            <div class="products">
+                <div class="product-card">
+                    <a href="product_p.html"><img src="car 2.png" alt="iPhone 13 Pro"></a>
+
+                    <h4>Xiaomi s7</h4>
+                    <p>₹55,00,000</p>
+                </div>
+                <div class="product-card">
+                    <a href=""><img src="su7.jpg" alt="MacBook Air M2"></a>
+                    <h4>Tata Su7</h4>
+                    <p>₹40,00,000</p>
+                </div>
+                <div class="product-card">
+                    <img src="car3.jpg" alt="Samsung Galaxy S23">
+                    <h4>LG Refridgerator</h4>
+                    <p>₹80,000</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="car4.webp" alt="Samsung Galaxy S23">
+                    <h4>Ford</h4>
+                    <p>₹30,00,000</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="creta.avif" alt="Samsung Galaxy S23">
+                    <h4>Creta</h4>
+                    <p>₹25,00,000</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="car5tata-harrier.jpg" alt="Samsung Tv">
+                    <h4>Tata Harrier</h4>
+                    <p>₹14,00,000</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="car6.jpg" alt="Samsung Galaxy S23">
+                    <h4>Maruti Suzuki Swift</h4>
+                    <p>₹15,00,000</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="hiltroz.jpg" alt="Samsung Galaxy S23">
+                    <h4>Hiltroz</h4>
+                    <p>₹10,00,000</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Vendora Logo" />
+                    <span>Vendora</span>
+                </div>
+                <div class="footer-description">
+                    Your trusted local marketplace for buying and selling everything.
+                </div>
+            </div>
+
+            <div class="footer-columns">
+                <div>
+                    <strong>For Buyers</strong>
+                    <p>Browse Categories</p>
+                    <p>Search Tips</p>
+                    <p>Safety Guide</p>
+                    <p>Mobile App</p>
+                </div>
+                <div>
+                    <strong>For Sellers</strong>
+                    <p>Post Free Ad</p>
+                    <p>Selling Tips</p>
+                    <p>Premium Plans</p>
+                    <p>Success Stories</p>
+                </div>
+                <div>
+                    <strong>Support</strong>
+                    <p>Help Center</p>
+                    <p>Contact Us</p>
+                    <p>Report Issue</p>
+                    <p>Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 Vendora. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

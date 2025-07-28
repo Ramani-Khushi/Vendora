@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQs | Vendora</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f9f9ff;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            background-color: #d4dfff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #0519a0;
+        }
+
+        .logo img {
+            height: 80px;
+            margin-right: 10px;
+        }
+
+        .navbar a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #0519a0;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #f4b400;
+        }
+
+        /* FAQs */
+        .faq-section {
+            padding: 40px 10%;
+        }
+
+        .faq-title {
+            font-size: 38px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .faq-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #555555;
+            margin-bottom: 30px;
+        }
+
+        .faq-container h4 {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #003399;
+        }
+
+        .faq-container p {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 30px;
+            text-align: center;
+            color: #0519a0;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+        }
+
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 40px 10%;
+            background-color: #d4dfff;
+            color: #333;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+        }
+
+        .footer-description {
+            max-width: 250px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 80px;
+        }
+
+        .footer-columns div {
+            min-width: 150px;
+        }
+
+        .footer-columns strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #0519a0;
+        }
+
+        .footer-columns p {
+            font-size: 14px;
+            margin: 6px 0;
+        }
+
+        .footer-bottom {
+            background-color: #0519a0;
+            color: #FFFADD;
+            text-align: center;
+            padding: 15px 10px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+                gap: 30px;
+                margin-top: 20px;
+            }
+
+            .footer-columns div {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Vendora Logo" />
+            <span>Vendora</span>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="post_ad.html">Post Ad</a>
+            <a href="contact_us.html">Contact Us</a>
+            <a href="faqs.html">FAQs</a>
+        </nav>
+    </header>
+
+    <!-- FAQ Content -->
+    <section class="faq-section">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        <p class="faq-subtitle">Find answers to common questions about using Vendora</p>
+
+        <div class="faq-container">
+            <h4>1. How do I post an ad on Vendora?</h4>
+            <p>Click on the "Post Ad" link in the navigation menu or homepage. Fill in your product details, upload an
+                image, and click submit.</p>
+
+            <h4>2. Do I need to create an account to post an ad?</h4>
+            <p>No, you can directly post an ad by entering your name, email, and phone number in the ad form.</p>
+
+            <h4>3. How can I contact a seller?</h4>
+            <p>Open the product page and scroll down to see the seller's contact information, including email and phone
+                number.</p>
+
+            <h4>4. Is it free to use Vendora?</h4>
+            <p>Yes, Vendora is completely free for browsing, searching, and posting ads.</p>
+
+            <h4>5. Can I edit or delete my ad after posting it?</h4>
+            <p>Currently, there is no edit option in pure HTML. In future updates, this will be handled using a user
+                login and backend system.</p>
+
+            <h4>6. What kind of products can I list?</h4>
+            <p>You can list electronics, furniture, vehicles, books, and more. Please avoid posting illegal or
+                restricted items.</p>
+
+            <h4>7. How do I search for specific items?</h4>
+            <p>Use the search page to enter keywords, choose a category, or enter a location to find what you're looking
+                for.</p>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Vendora Logo" />
+                    <span>Vendora</span>
+                </div>
+                <div class="footer-description">
+                    Your trusted local marketplace for buying and selling everything.
+                </div>
+            </div>
+
+            <div class="footer-columns">
+                <div>
+                    <strong>For Buyers</strong>
+                    <p>Browse Categories</p>
+                    <p>Search Tips</p>
+                    <p>Safety Guide</p>
+                    <p>Mobile App</p>
+                </div>
+                <div>
+                    <strong>For Sellers</strong>
+                    <p>Post Free Ad</p>
+                    <p>Selling Tips</p>
+                    <p>Premium Plans</p>
+                    <p>Success Stories</p>
+                </div>
+                <div>
+                    <strong>Support</strong>
+                    <p>Help Center</p>
+                    <p>Contact Us</p>
+                    <p>Report Issue</p>
+                    <p>Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2025 Vendora. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+
+</html>

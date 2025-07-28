@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Ads | Vendora</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9ff;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: #d4dfff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #eee;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #0519a0;
+        }
+
+        .logo img {
+            height: 80px;
+            margin-right: 10px;
+        }
+
+        .navbar a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #0519a0;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #f4b400;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            padding: 30px 20px 10px;
+        }
+
+        .search-bar input[type="text"] {
+            width: 60%;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid #0519a0;
+            border-radius: 6px 0 0 6px;
+            outline: none;
+        }
+
+        .search-bar button {
+            padding: 12px 24px;
+            background: linear-gradient(to right, #f4b400, #003399);
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            border-radius: 0 6px 6px 0;
+            cursor: pointer;
+        }
+
+        .container {
+            display: flex;
+            padding: 30px;
+            gap: 40px;
+        }
+
+        /* Filters */
+        .filters {
+            width: 250px;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .filters h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .filters label {
+            display: block;
+            margin: 10px 0 6px;
+            font-weight: 600;
+        }
+
+        .filters input,
+        .filters select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+        }
+
+        /* Results & Cards */
+        .results {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 15px 18px;
+        }
+
+        .card-body h4 {
+            font-size: 18px;
+            color: #0519a0;
+            margin-bottom: 8px;
+        }
+
+        .card-body p {
+            font-size: 16px;
+            font-weight: bold;
+            color: #003399;
+            margin-bottom: 6px;
+        }
+
+        .card-body span {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+        }
+
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 40px 10%;
+            background-color: #d4dfff;
+            color: #333;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+        }
+
+        .footer-description {
+            max-width: 250px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 80px;
+        }
+
+        .footer-columns div {
+            min-width: 150px;
+        }
+
+        .footer-columns strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #0519a0;
+        }
+
+        .footer-columns p {
+            font-size: 14px;
+            margin: 6px 0;
+        }
+
+        .footer-bottom {
+            background: #0519a0;
+            color: #FFFADD;
+            text-align: center;
+            padding: 15px 10px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .filters {
+                width: 100%;
+            }
+
+            .search-bar {
+                flex-direction: column;
+            }
+
+            .search-bar input[type="text"] {
+                width: 100%;
+                border-radius: 6px;
+                margin-bottom: 10px;
+            }
+
+            .search-bar button {
+                width: 100%;
+                border-radius: 6px;
+            }
+
+            .results {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+                gap: 30px;
+                margin-top: 20px;
+            }
+
+            .footer-columns div {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Vendora Logo" />
+            <span>Vendora</span>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="post_ad.html">Post Ad</a>
+            <a href="contact_us.html">Contact Us</a>
+            <a href="FAQS.html">FAQs</a>
+        </nav>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" placeholder="🔍 Search for products..." />
+        <button type="submit">Search</button>
+    </div>
+
+    <!-- Main Section -->
+    <div class="container">
+
+        <!-- Filters -->
+        <div class="filters">
+            <h3>Filters</h3>
+            <label for="category">Category</label>
+            <select id="category">
+                <option>All Categories</option>
+                <option>Electronics</option>
+                <option>Furniture</option>
+                <option>Vehicles</option>
+                <option>Other</option>
+            </select>
+
+            <label for="price">Price Range</label>
+            <select id="price">
+                <option>Any Price</option>
+                <option>Below ₹5,000</option>
+                <option>₹5,000 - ₹20,000</option>
+                <option>₹20,000 - ₹1,00,000</option>
+                <option>Above ₹1,00,000</option>
+            </select>
+
+            <label for="location">Location</label>
+            <input type="text" id="location" placeholder="Enter location">
+        </div>
+
+        <!-- Ads Cards -->
+        <div class="results">
+            <div class="card">
+                <img src="iphone1.jpg" alt="iPhone 13 Pro" />
+                <div class="card-body">
+                    <h4>iPhone 13 Pro</h4>
+                    <p>₹55,000</p>
+                    <span>Like new, 128GB | No scratches</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="mac.jpg" alt="MacBook Air M2" />
+                <div class="card-body">
+                    <h4>MacBook Air M2</h4>
+                    <p>₹95,000</p>
+                    <span>8GB | 256GB SSD | Space Gray</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="car.png" alt="Honda City" />
+                <div class="card-body">
+                    <h4>Honda City</h4>
+                    <p>₹12,00,000</p>
+                    <span>2019 | Petrol | Excellent condition</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="sofa.png" alt="Gaming Chair" />
+                <div class="card-body">
+                    <h4>Gaming Chair</h4>
+                    <p>₹15,000</p>
+                    <span>Ergonomic | Black-red | Adjustable</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Vendora Logo" />
+                    <span>Vendora</span>
+                </div>
+                <div class="footer-description">
+                    Your trusted local marketplace for buying and selling everything.
+                </div>
+            </div>
+
+            <div class="footer-columns">
+                <div>
+                    <strong>For Buyers</strong>
+                    <p>Browse Categories</p>
+                    <p>Search Tips</p>
+                    <p>Safety Guide</p>
+                    <p>Mobile App</p>
+                </div>
+                <div>
+                    <strong>For Sellers</strong>
+                    <p>Post Free Ad</p>
+                    <p>Selling Tips</p>
+                    <p>Premium Plans</p>
+                    <p>Success Stories</p>
+                </div>
+                <div>
+                    <strong>Support</strong>
+                    <p>Help Center</p>
+                    <p>Contact Us</p>
+                    <p>Report Issue</p>
+                    <p>Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2025 Vendora. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+
+</html>
