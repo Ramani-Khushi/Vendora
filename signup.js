@@ -11,7 +11,7 @@
     return;
             }
 
-    // Save email & password to localStorage (for learning/testing only)
+    // Save email & password to localStorage 
     localStorage.setItem("VendoraUserEmail", email);
     localStorage.setItem("VendoraUserPassword", password);
 
@@ -23,6 +23,5 @@
         popup.style.display = "none";
             }, 3000);
 
-            // Optionally reset form
-            // this.reset();
+           
         });

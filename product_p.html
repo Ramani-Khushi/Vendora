@@ -12,13 +12,13 @@
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
-
+    
         body {
             background-color: white;
             color: #333;
             line-height: 1.6;
         }
-
+    
         /* Header */
         .header {
             background-color: #d4dfff;
@@ -31,7 +31,7 @@
             top: 0;
             z-index: 999;
         }
-
+    
         .logo {
             display: flex;
             align-items: center;
@@ -39,12 +39,12 @@
             font-weight: bold;
             color: #0519a0;
         }
-
+    
         .logo img {
             height: 60px;
             margin-right: 10px;
         }
-
+    
         .navbar a,
         .nav1 a {
             margin-left: 15px;
@@ -53,12 +53,12 @@
             font-weight: bold;
             transition: color 0.3s;
         }
-
+    
         .navbar a:hover,
         .nav1 a:hover {
             color: #f4b400;
         }
-
+    
         .nav1 button {
             padding: 8px 12px;
             background: #f4b400;
@@ -70,17 +70,17 @@
             font-weight: bold;
             transition: background-color 0.3s;
         }
-
+    
         .nav1 button:hover {
             background-color: #f4cc4a;
         }
-
+    
         .container {
             display: flex;
             gap: 20px;
             margin: 30px;
         }
-
+    
         .left-panel {
             flex: 2;
             background: #fff;
@@ -88,33 +88,32 @@
             border-radius: 10px;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
         }
-
+    
         .right-panel {
             flex: 1;
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
-
+    
         .right-box {
             background: #fff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-            
         }
-
+    
         .main-img {
             width: 100%;
             border-radius: 8px;
         }
-
+    
         .thumbnails {
             margin-top: 10px;
             display: flex;
             gap: 10px;
         }
-
+    
         .thumbnails img {
             width: 70px;
             height: 100px;
@@ -123,26 +122,27 @@
             border: 2px solid transparent;
             cursor: pointer;
         }
-
-        .thumbnails img:hover {
-            border-color: #007bff;
+    
+        .thumbnails img:hover,
+        .thumbnails img.active-thumb {
+            border-color: #0519a0;
         }
-
+    
         .price-box h2 {
             color: #1a237e;
         }
-
+    
         .price-box del {
             color: gray;
             font-size: 14px;
             margin-left: 10px;
         }
-
+    
         .price-box p {
             font-weight: bold;
             margin-top: 5px;
         }
-
+    
         .btn {
             display: block;
             padding: 12px;
@@ -153,18 +153,18 @@
             font-weight: bold;
             cursor: pointer;
         }
-
+    
         .btn-call {
             background: linear-gradient(to right, #f9a825, #283593);
             color: white;
         }
-
+    
         .btn-message {
             background: white;
             border: 2px solid #283593;
             color: #283593;
         }
-
+    
         .btn-report {
             color: red;
             background: none;
@@ -172,25 +172,25 @@
             cursor: pointer;
             text-align: left;
         }
-
+    
         .seller-info p {
             margin: 6px 0;
         }
-
+    
         .star {
             color: gold;
             font-size: 18px;
         }
-
+    
         .details-box h3 {
             margin-bottom: 10px;
             color: #1a237e;
         }
-
+    
         .details-box p {
             margin: 6px 0px;
         }
-
+    
         .badge {
             background: #e3f2fd;
             padding: 4px 8px;
@@ -198,7 +198,7 @@
             font-size: 12px;
             color: #0d47a1;
         }
-
+    
         .footer-top {
             display: flex;
             flex-wrap: wrap;
@@ -207,7 +207,7 @@
             background-color: #d4dfff;
             color: #333;
         }
-
+    
         .footer-logo {
             display: flex;
             align-items: center;
@@ -215,210 +215,259 @@
             font-size: 24px;
             margin-bottom: 10px;
         }
-
+    
         .footer-logo img {
             height: 40px;
             margin-right: 8px;
         }
-
+    
         .footer-description {
             max-width: 250px;
             font-size: 14px;
         }
-
+    
         .footer-columns {
             display: flex;
             flex-wrap: wrap;
             gap: 60px;
         }
-
+    
         .footer-columns div {
             min-width: 150px;
         }
-
+    
         .footer-columns strong {
             display: block;
             margin-bottom: 10px;
             font-size: 16px;
             color: #0519a0;
         }
-
+    
         .footer {
             text-align: center;
             padding: 15px;
             background: #0519a0;
             color: #eee;
         }
-
+    
         .description-box {
             background: #fff;
-            margin-right:500px;
+            margin-right: 500px;
             margin-left: 30px;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
         }
-
-          .description-box h3 {
+    
+        .description-box h3 {
             color: #1a237e;
             margin-bottom: 10px;
         }
-
+    
         .description-box p {
             margin-bottom: 15px;
         }
-
+    
         .description-box ul {
             list-style-type: disc;
             padding-left: 20px;
         }
-
+    
         .description-box li {
             margin-bottom: 6px;
         }
-
+    
+        .slider-wrapper {
+            position: relative;
+        }
+    
+        .slider-img {
+            display: none;
+            width: 100%;
+            height: 500px;
+            border-radius: 8px;
+        }
+    
+        .slider-img.active {
+            display: block;
+        }
+    
+        .slider-buttons {
+            position: absolute;
+            top: 45%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+    
+        .slider-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    
+        .slider-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    
+        .thumbnails img.active-thumb {
+            border-color: #0519a0;
+        }
     </style>
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="logo">
-            <img src="logo.png" alt="Vendora Logo">
-            <span>Vendora</span>
-        </div>
+  
+<header class="header"> 
+  
+    <div class="logo">
+        <img src="logo.png" alt="Vendora Logo">
+        <span>Vendora</span>
+    </div>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="search.html">Search</a>
+        <a href="post_ad.html">Post Ad</a>
+        <a href="contact_us.html">Contact Us</a>
+        <a href="FAQS.html">FAQs</a>
+    </nav>
+    <nav class="nav1">
+        <a href="login.html"><button>Login</button></a>
+        <a href="signup.html"><button>Sign Up</button></a>
+    </nav>
+</header>
 
-        <nav class="navbar">
-            <a href="index.html">Home</a>
-            <a href="search.html">Search</a>
-            <a href="post_ad.html">Post Ad</a>
-            <a href="contact_us.html">Contact Us</a>
-            <a href="FAQS.html">FAQs</a>
-        </nav>
+<!-- Main Content -->
+<div class="container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+        <div class="slider-wrapper">
+            <img src="iphone1.jpg" class="slider-img active" alt="iPhone">
+            <img src="iphone2.jpg" class="slider-img" alt="iPhone">
+            <img src="iphone3.jpg" class="slider-img" alt="iPhone">
 
-        <nav class="nav1">
-            <a href="login.html"><button>Login</button></a>
-            <a href="signup.html"><button>Sign Up</button></a>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container">
-
-        <!-- Left Panel -->
-        <div class="left-panel">
-            <img src="iphone1.jpg" alt="iPhone" class="main-img">
-
-            <div class="thumbnails">
-                <img src="iphone2.jpg">
-                <img src="iphone3.jpg">
-            </div>
-
-            <div class="details-box">
-                <br>
-                <h3>Product Details</h3>
-                <p><strong>Condition:</strong> <span class="badge">Like New</span></p>
-                <p><strong>Category:</strong> Electronics</p>
-                <p><strong>Location:</strong> Mumbai, Maharashtra</p>
-                <p><strong>Posted:</strong> Two Days Ago</p>
-                <p><strong>Views:</strong> 👁156</p>
+            <!-- Buttons -->
+            <div class="slider-buttons">
+                <button onclick="prevImage()">❮</button>
+                <button onclick="nextImage()">❯</button>
             </div>
         </div>
 
-        <!-- Right Panel -->
-        <div class="right-panel">
+        <!-- Thumbnails -->
+        <div class="thumbnails">
+            <img src="iphone1.jpg" onclick="showImage(0)" class="active-thumb">
+            <img src="iphone2.jpg" onclick="showImage(1)">
+            <img src="iphone3.jpg" onclick="showImage(2)">
+        </div>
 
-            <!-- Price & Buttons -->
-            <div class="right-box price-box">
-                <h2>₹45,000 <del>₹65,000</del></h2>
-                <p>iPhone 12 - Excellent Condition</p>
-                <button class="btn btn-call">📞 Call Seller</button>
-                <button class="btn btn-message">✉️ Send Message</button>
-                <button class="btn-report">🚩 Report this ad</button>
-            </div>
-
-            <!-- Seller Info -->
-            <div class="right-box seller-info">
-                <h3>Seller Information</h3>
-                <p><strong>Rajesh Kumar</strong></p>
-                <p>Member since 2022</p>
-                <p class="star">★★★★☆ (12 ads)</p>
-                <p>📞 +91 98765 43210</p>
-                <p>📧 rajesh.kumar@email.com</p>
-            </div>
-
-            <!-- Safety Tips -->
-            <div class="right-box">
-                <h3>Safety Tips</h3>
-                <ul>
-                    <li>Meet in a public place</li>
-                    <li>Check the item before buying</li>
-                    <li>Never pay in advance</li> <br>
-                </ul>
-            </div>
+        <!-- Product Details -->
+        <div class="details-box">
+            <br>
+            <h3>Product Details</h3>
+            <p><strong>Condition:</strong> <span class="badge">Like New</span></p>
+            <p><strong>Category:</strong> Electronics</p>
+            <p><strong>Location:</strong> Mumbai, Maharashtra</p>
+            <p><strong>Posted:</strong> Two Days Ago</p>
+            <p><strong>Views:</strong> 👁156</p>
         </div>
     </div>
 
-    <!-- Description Box -->
-    <div class="description-box">
-        <h3>Description</h3>
-        <p>Well-maintained Maruti Suzuki Swift 2021 model in excellent condition. No accidents, single owner, smooth 
-            engine, and regular servicing done. Reason for selling: upgrading to SUV. Insurance and all documents
-            available.</p>
+    <!-- Right Panel -->
+    <div class="right-panel">
+        <div class="right-box price-box">
+            <h2>₹45,000 <del>₹65,000</del></h2>
+            <p>iPhone 12 - Excellent Condition</p>
+            <button class="btn btn-call">📞 Call Seller</button>
+            <button class="btn btn-message">✉️ Send Message</button>
+            <button class="btn-report">🚩 Report this ad</button>
+        </div>
 
-        <h3>Features</h3>
-        <ul>
-            <li>Fuel Type: Petrol</li>
-            <li>Transmission: Manual</li>
-            <li>Mileage: 20 km/l</li>
-            <li>Engine: 1197 cc</li>
-            <li>Seating Capacity: 5</li>
-            <li>Color: Red</li>
-        </ul>
+        <div class="right-box seller-info">
+            <h3>Seller Information</h3>
+            <p><strong>Rajesh Kumar</strong></p>
+            <p>Member since 2022</p>
+            <p class="star">★★★★☆ (12 ads)</p>
+            <p>📞 +91 98765 43210</p>
+            <p>📧 rajesh.kumar@email.com</p>
+        </div>
+
+        <div class="right-box">
+            <h3>Safety Tips</h3>
+            <ul>
+                <li>Meet in a public place</li>
+                <li>Check the item before buying</li>
+                <li>Never pay in advance</li> <br>
+            </ul>
+        </div>
     </div>
+</div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-top">
+<!-- Description Box -->
+<div class="description-box">
+    <h3>Description</h3>
+    <p>Well-maintained Maruti Suzuki Swift 2021 model in excellent condition. No accidents, single owner, smooth
+        engine, and regular servicing done. Reason for selling: upgrading to SUV. Insurance and all documents
+        available.</p>
+
+    <h3>Features</h3>
+    <ul>
+        <li>Fuel Type: Petrol</li>
+        <li>Transmission: Manual</li>
+        <li>Mileage: 20 km/l</li>
+        <li>Engine: 1197 cc</li>
+        <li>Seating Capacity: 5</li>
+        <li>Color: Red</li>
+    </ul>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-top">
+        <div>
+            <div class="footer-logo">
+                <img src="logo.png" alt="Vendora Logo" />
+                <span>Vendora</span>
+            </div>
+            <div class="footer-description">
+                Your trusted local marketplace for buying and selling everything.
+            </div>
+        </div>
+
+        <div class="footer-columns">
             <div>
-                <div class="footer-logo">
-                    <img src="logo.png" alt="Vendora Logo" />
-                    <span>Vendora</span>
-                </div>
-                <div class="footer-description">
-                    Your trusted local marketplace for buying and selling everything.
-                </div>
+                <strong>For Buyers</strong>
+                <p>Browse Categories</p>
+                <p>Search Tips</p>
+                <p>Safety Guide</p>
+                <p>Mobile App</p>
             </div>
-
-            <div class="footer-columns">
-                <div>
-                    <strong>For Buyers</strong>
-                    <p>Browse Categories</p>
-                    <p>Search Tips</p>
-                    <p>Safety Guide</p>
-                    <p>Mobile App</p>
-                </div>
-                <div>
-                    <strong>For Sellers</strong>
-                    <p>Post Free Ad</p>
-                    <p>Selling Tips</p>
-                    <p>Premium Plans</p>
-                    <p>Success Stories</p>
-                </div>
-                <div>
-                    <strong>Support</strong>
-                    <p>Help Center</p>
-                    <p>Contact Us</p>
-                    <p>Report Issue</p>
-                    <p>Privacy Policy</p>
-                </div>
+            <div>
+                <strong>For Sellers</strong>
+                <p>Post Free Ad</p>
+                <p>Selling Tips</p>
+                <p>Premium Plans</p>
+                <p>Success Stories</p>
+            </div>
+            <div>
+                <strong>Support</strong>
+                <p>Help Center</p>
+                <p>Contact Us</p>
+                <p>Report Issue</p>
+                <p>Privacy Policy</p>
             </div>
         </div>
-        <div class="footer">
-            <p>&copy; 2025 Vendora. All rights reserved.</p>
-        </div>
-    </footer>
-
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 Vendora. All rights reserved.</p>
+    </div>
+</footer>
+      <script src="product_p.js"></script>
 </body>
 
 </html>

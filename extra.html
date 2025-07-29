@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up | Vendora</title>
+    <title>FAQs | Vendora</title>
     <style>
         * {
             margin: 0;
@@ -14,32 +14,30 @@
         }
 
         body {
-            background-color: #f9f9ff;
+            background: #f9f9ff;
             color: #333;
         }
 
+        /* Header */
         .header {
-            position: sticky;
-            top: 0;
             background-color: #d4dfff;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
             border-bottom: 1px solid #eee;
-            z-index: 1000;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            font-size: 35px;
+            font-size: 30px;
             font-weight: bold;
             color: #0519a0;
         }
 
         .logo img {
-            height: 100px;
+            height: 80px;
             margin-right: 10px;
         }
 
@@ -54,65 +52,96 @@
             color: #f4b400;
         }
 
-        main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 50px 20px;
+        /* FAQ Section */
+        .faq-section {
+            padding: 40px 10%;
         }
 
-        h1 {
-            font-size: 36px;
-            color: #003399;
+        .faq-title {
+            font-size: 38px;
+            font-weight: bold;
+            text-align: center;
             margin-bottom: 10px;
         }
 
-        .subtitle {
-            font-size: 18px;
-            margin-bottom: 30px;
-            color: #555;
-        }
-
-        .signup-box {
-            background-color: #ffffff;
-            padding: 40px;
-            width: 100%;
-            max-width: 500px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .signup-box label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .signup-box input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
-
-        .signup-box button {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(to right, #f4b400, #003399);
-            color: white;
-            font-weight: bold;
+        .faq-subtitle {
+            text-align: center;
             font-size: 16px;
-            border: none;
-            border-radius: 6px;
+            color: #555555;
+            margin-bottom: 30px;
+        }
+
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-box {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 51, 153, 0.1);
+            padding: 20px 25px;
+            transition: transform 0.3s ease;
+            border-left: 5px solid #003399;
+        }
+
+        .faq-box:hover {
+            transform: scale(1.02);
+            background-color: #f7faff;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #003399;
             cursor: pointer;
-            transition: background 0.3s ease;
         }
 
-        .signup-box button:hover {
-            background: #0022aa;
+        .faq-toggle {
+            font-size: 22px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
         }
 
+        .faq-answer {
+            display: none;
+            margin-top: 15px;
+            font-size: 16px;
+            color: #444;
+            line-height: 1.5;
+            animation: fadeIn 0.3s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 30px;
+            text-align: center;
+            color: #0519a0;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
         footer {
             margin-top: 50px;
         }
@@ -175,19 +204,10 @@
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 28px;
-            }
-
-            .signup-box {
-                padding: 25px;
-            }
-
             .footer-top {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
-                padding: 30px 20px;
             }
 
             .footer-columns {
@@ -200,52 +220,12 @@
                 text-align: center;
             }
         }
-
-        /* FAQ Styles */
-        .faq {
-            width: 80%;
-            margin: 40px auto;
-        }
-
-        .faq-item {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 15px;
-            font-weight: bold;
-            cursor: pointer;
-            background-color: #e6e9ff;
-        }
-
-        .faq-answer {
-            padding: 15px;
-            display: none;
-        }
-
-        /* Popup Notification */
-        .popup {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #003399;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-            display: none;
-            z-index: 2000;
-        }
     </style>
 </head>
 
 <body>
 
-    <!-- Navbar -->
+    <!-- Header -->
     <header class="header">
         <div class="logo">
             <img src="logo.png" alt="Vendora Logo" />
@@ -256,45 +236,34 @@
             <a href="search.html">Search</a>
             <a href="post_ad.html">Post Ad</a>
             <a href="contact_us.html">Contact Us</a>
-            <a href="FAQS.html">FAQs</a>
+            <a href="faqs.html">FAQs</a>
         </nav>
     </header>
 
-    <!-- Sign Up Form -->
-    <main>
-        <h1>Create Account</h1>
-        <div class="subtitle">Join Vendora and start buying & selling</div>
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        <p class="faq-subtitle">Find answers to common questions about using Vendora</p>
 
-        <form class="signup-box" id="signupForm">
-            <div>
-                <label for="name">Full Name:</label>
-                <input id="name" type="text" placeholder="Enter your full name" required />
-            </div>
+        <div class="faq-container" id="faq-container">
+            <!-- JS will inject FAQ cards here -->
+        </div>
+    </section>
 
-            <div>
-                <label for="Email">Email Address:</label>
-                <input id="Email" type="email" placeholder="Enter your email" required />
-            </div>
-
-            <div>
-                <label for="phone">Phone Number:</label>
-                <input id="phone" type="tel" placeholder="Enter your phone number" required />
-            </div>
-
-            <div>
-                <label for="Password">Password:</label>
-                <input id="Password" type="password" placeholder="Create a password" required />
-            </div>
-
-            <div>
-                <label for="ConfirmPassword">Confirm Password:</label>
-                <input id="ConfirmPassword" type="password" placeholder="Confirm your password" required />
-            </div>
-
-            <button type="submit">Create Account</button>
-        </form>
-
-    </main>
+    <!-- Text Slider -->
+    <div id="slider" style="
+        text-align: center;
+        font-size: 20px;
+        background: linear-gradient(to right, #d4dfff, #f0f4ff);
+        padding: 25px;
+        margin: 20px auto;
+        max-width: 80%;
+        border-radius: 10px;
+        color: #0519a0;
+        font-weight: bold;
+        transition: opacity 0.5s ease-in-out;">
+        <span id="slider-text"></span>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -339,41 +308,74 @@
         </div>
     </footer>
 
-    <!-- ✅ All your code remains the same above -->
-    
-    <!-- Notification Popup -->
-    <div class="popup" id="popupBanner">🎉 Account created successfully!</div>
-    
+    <!-- JavaScript -->
     <script>
-    
-        // Handle form submit
-        document.getElementById("signupForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const email = document.getElementById("Email").value;
-            const password = document.getElementById("Password").value;
-            const confirm = document.getElementById("ConfirmPassword").value;
-
-            if (password !== confirm) {
-                alert("❌ Passwords do not match!");
-                return;
+        const faqs = [
+            {
+                question: "How do I post an ad on Vendora?",
+                answer: "Click on the 'Post Ad' link in the navigation menu. Fill in details and click submit."
+            },
+            {
+                question: "Do I need to create an account to post an ad?",
+                answer: "No, just enter your name, email, and phone number."
+            },
+            {
+                question: "How can I contact a seller?",
+                answer: "Open the product page to see seller contact info."
+            },
+            {
+                question: "Is it free to use Vendora?",
+                answer: "Yes, it's completely free to browse and post ads."
+            },
+            {
+                question: "Can I edit or delete my ad after posting it?",
+                answer: "Editing will be available in future updates with a login system."
+            },
+            {
+                question: "What kind of products can I list?",
+                answer: "Electronics, furniture, vehicles, books, etc. No illegal/restricted items."
+            },
+            {
+                question: "How do I search for specific items?",
+                answer: "Use the search page with keywords, category, or location."
             }
+        ];
 
-            // Save email & password to localStorage (for learning/testing only)
-            localStorage.setItem("VendoraUserEmail", email);
-            localStorage.setItem("VendoraUserPassword", password);
+        const faqContainer = document.getElementById("faq-container");
+        faqContainer.innerHTML = "";
 
-            // Show popup banner
-            const popup = document.getElementById("popupBanner");
-            popup.style.display = "block";
+        faqs.forEach((item, index) => {
+            const box = document.createElement("div");
+            box.className = "faq-box";
 
-            setTimeout(() => {
-                popup.style.display = "none";
-            },3000);
+            const question = document.createElement("div");
+            question.className = "faq-question";
 
-            // Optionally reset form
-            // this.reset();
+            const qText = document.createElement("span");
+            qText.textContent = `${index + 1}. ${item.question}`;
+
+            const toggleIcon = document.createElement("span");
+            toggleIcon.className = "faq-toggle";
+            toggleIcon.textContent = "+";
+
+            question.appendChild(qText);
+            question.appendChild(toggleIcon);
+
+            const answer = document.createElement("div");
+            answer.className = "faq-answer";
+            answer.textContent = item.answer;
+
+            question.addEventListener("click", () => {
+                const isVisible = answer.style.display === "block";
+                answer.style.display = isVisible ? "none" : "block";
+                toggleIcon.textContent = isVisible ? "+" : "−";
+            });
+
+            box.appendChild(question);
+            box.appendChild(answer);
+            faqContainer.appendChild(box);
         });
     </script>
-    </body>
+</body>
+
 </html>

@@ -18,7 +18,6 @@
             color: #333;
         }
 
-        /* Header */
         .header {
             background-color: #d4dfff;
             display: flex;
@@ -52,7 +51,6 @@
             color: #f4b400;
         }
 
-        /* FAQs */
         .faq-section {
             padding: 40px 10%;
         }
@@ -67,35 +65,67 @@
         .faq-subtitle {
             text-align: center;
             font-size: 16px;
-            color: #555555;
+            color: #555;
             margin-bottom: 30px;
         }
 
-        .faq-container h4 {
-            margin-top: 20px;
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-box {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 51, 153, 0.1);
+            padding: 20px 25px;
+            transition: transform 0.3s ease;
+            border-left: 5px solid #003399;
+        }
+
+        .faq-box:hover {
+            transform: scale(1.02);
+            background-color: #f7faff;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-size: 18px;
-            color: #003399;
-        }
-
-        .faq-container p {
-            margin-top: 5px;
-            margin-bottom: 10px;
-        }
-
-        .back-link {
-            display: block;
-            margin-top: 30px;
-            text-align: center;
-            color: #0519a0;
             font-weight: bold;
-            text-decoration: none;
+            color: #003399;
+            cursor: pointer;
         }
 
-        .back-link:hover {
-            text-decoration: underline;
+        .faq-toggle {
+            font-size: 22px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
         }
 
-        /* Footer */
+        .faq-answer {
+            display: none;
+            margin-top: 15px;
+            font-size: 16px;
+            color: #444;
+            line-height: 1.5;
+            animation: fadeIn 0.3s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         footer {
             margin-top: 50px;
         }
@@ -177,7 +207,7 @@
     </style>
 </head>
 
-<body>
+<body> 
 
     <!-- Header -->
     <header class="header">
@@ -194,38 +224,12 @@
         </nav>
     </header>
 
-    <!-- FAQ Content -->
+    <!-- FAQ Section -->
     <section class="faq-section">
         <h2 class="faq-title">Frequently Asked Questions</h2>
         <p class="faq-subtitle">Find answers to common questions about using Vendora</p>
-
-        <div class="faq-container">
-            <h4>1. How do I post an ad on Vendora?</h4>
-            <p>Click on the "Post Ad" link in the navigation menu or homepage. Fill in your product details, upload an
-                image, and click submit.</p>
-
-            <h4>2. Do I need to create an account to post an ad?</h4>
-            <p>No, you can directly post an ad by entering your name, email, and phone number in the ad form.</p>
-
-            <h4>3. How can I contact a seller?</h4>
-            <p>Open the product page and scroll down to see the seller's contact information, including email and phone
-                number.</p>
-
-            <h4>4. Is it free to use Vendora?</h4>
-            <p>Yes, Vendora is completely free for browsing, searching, and posting ads.</p>
-
-            <h4>5. Can I edit or delete my ad after posting it?</h4>
-            <p>Currently, there is no edit option in pure HTML. In future updates, this will be handled using a user
-                login and backend system.</p>
-
-            <h4>6. What kind of products can I list?</h4>
-            <p>You can list electronics, furniture, vehicles, books, and more. Please avoid posting illegal or
-                restricted items.</p>
-
-            <h4>7. How do I search for specific items?</h4>
-            <p>Use the search page to enter keywords, choose a category, or enter a location to find what you're looking
-                for.</p>
-
+        <div class="faq-container" id="faq-container">
+            <!-- JS will inject FAQ boxes here -->
         </div>
     </section>
 
@@ -271,7 +275,9 @@
             &copy; 2025 Vendora. All rights reserved.
         </div>
     </footer>
-
+    <!-- JavaScript -->
+    <script src="FAQS.js"> </script>
+   
 </body>
 
 </html>
