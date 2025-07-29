@@ -2,141 +2,378 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Home | Vendora</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | Vendora</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9ff;
+            color: #333;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: #d4dfff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #eee;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 35px;
+            font-weight: bold;
+            color: #0519a0;
+        }
+
+        .logo img {
+            height: 100px;
+            margin-right: 10px;
+        }
+
+        .navbar a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #0519a0;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #f4b400;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #003399;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .signup-box {
+            background-color: #ffffff;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .signup-box label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .signup-box input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .signup-box button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to right, #f4b400, #003399);
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .signup-box button:hover {
+            background: #0022aa;
+        }
+
+        footer {
+            margin-top: 50px;
+        }
+
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 40px 10%;
+            background-color: #d4dfff;
+            color: #333;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+        }
+
+        .footer-description {
+            max-width: 250px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 80px;
+        }
+
+        .footer-columns div {
+            min-width: 150px;
+        }
+
+        .footer-columns strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #0519a0;
+        }
+
+        .footer-columns p {
+            font-size: 14px;
+            margin: 6px 0;
+        }
+
+        .footer-bottom {
+            background-color: #0519a0;
+            color: #FFFADD;
+            text-align: center;
+            padding: 15px 10px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .signup-box {
+                padding: 25px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 30px 20px;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+                gap: 30px;
+                margin-top: 20px;
+            }
+
+            .footer-columns div {
+                text-align: center;
+            }
+        }
+
+        /* FAQ Styles */
+        .faq {
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        .faq-item {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #e6e9ff;
+        }
+
+        .faq-answer {
+            padding: 15px;
+            display: none;
+        }
+
+        /* Popup Notification */
+        .popup {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #003399;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 2000;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Header -->
+    <!-- Navbar -->
     <header class="header">
         <div class="logo">
-            <img src="logo.png" alt="Vendora Logo">
-            <h1>Vendora</h1>
+            <img src="logo.png" alt="Vendora Logo" />
+            <span>Vendora</span>
         </div>
-
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="search.html">Search</a></li>
-                <li><a href="post_ad.html">Post Ad</a></li>
-                <li><a href="contact_us.html">Contact Us</a></li>
-                <li><a href="FAQS.html">FAQs</a></li>
-            </ul>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="post_ad.html">Post Ad</a>
+            <a href="contact_us.html">Contact Us</a>
+            <a href="FAQS.html">FAQs</a>
         </nav>
-
-        <div class="auth-buttons">
-            <a href="login.html"><button>Login</button></a>
-            <a href="signup.html"><button>Sign Up</button></a>
-        </div>
     </header>
 
-    <!-- Search Banner -->
-    <section class="banner">
-        <div class="container">
-            <img src="background.png" alt="Marketplace Banner Image" height="160" width="160">
-            <div class="search-overlay">
-                <form action="search.html" class="search-form">
-                    <input type="text" name="query" placeholder="Search for products...">
-                    <button type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
+    <!-- Sign Up Form -->
     <main>
-        <section class="category-section">
-            <h2>Categories</h2>
-            <div class="categories">
-                <a href="electronics.html">
-                    <img src="electronics.png" alt="Electronics">
-                    <p>Electronics</p>
-                </a>
-                <a href="maincar.html">
-                    <img src="car.png" alt="Cars">
-                    <p>Cars</p>
-                </a>
-                <a href="#">
-                    <img src="furniture.png" alt="Furniture">
-                    <p>Furniture</p>
-                </a>
-                <a href="#">
-                    <img src="headphone.png" alt="Mobile & Accessories">
-                    <p>Mobile & Accessories</p>
-                </a>
-            </div>
-        </section>
+        <h1>Create Account</h1>
+        <div class="subtitle">Join Vendora and start buying & selling</div>
 
-        <!-- Featured Ads Section -->
-        <section class="featured-section">
-            <h2>Featured Ads</h2>
-            <div class="featured-ads">
-                <a href="product_p.html">
-                    <img src="iphone1.jpg" alt="iPhone 12">
-                    <h3>iPhone 12</h3>
-                    <p>₹45,000</p>
-                </a>
-                <a href="product_c.html">
-                    <img src="su7.jpg" alt="Ford Car">
-                    <h3>Ford Car</h3>
-                    <p>₹5,00,000</p>
-                </a>
-                <a href="product_s.html">
-                    <img src="sofa.png" alt="Wooden Sofa">
-                    <h3>Wooden Sofa</h3>
-                    <p>₹8,000</p>
-                </a>
+        <form class="signup-box" id="signupForm">
+            <div>
+                <label for="name">Full Name:</label>
+                <input id="name" type="text" placeholder="Enter your full name" required />
             </div>
-        </section>
+
+            <div>
+                <label for="Email">Email Address:</label>
+                <input id="Email" type="email" placeholder="Enter your email" required />
+            </div>
+
+            <div>
+                <label for="phone">Phone Number:</label>
+                <input id="phone" type="tel" placeholder="Enter your phone number" required />
+            </div>
+
+            <div>
+                <label for="Password">Password:</label>
+                <input id="Password" type="password" placeholder="Create a password" required />
+            </div>
+
+            <div>
+                <label for="ConfirmPassword">Confirm Password:</label>
+                <input id="ConfirmPassword" type="password" placeholder="Confirm your password" required />
+            </div>
+
+            <button type="submit">Create Account</button>
+        </form>
+
     </main>
 
     <!-- Footer -->
     <footer>
         <div class="footer-top">
-            <div class="footer-brand">
-                <img src="logo.png" alt="Vendora Logo">
-                <h2>Vendora</h2>
-                <p>Your trusted local marketplace for buying and selling everything.</p>
+            <div>
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Vendora Logo" />
+                    <span>Vendora</span>
+                </div>
+                <div class="footer-description">
+                    Your trusted local marketplace for buying and selling everything.
+                </div>
             </div>
 
             <div class="footer-columns">
-                <div class="footer-column">
-                    <h4>For Buyers</h4>
-                    <ul>
-                        <li>Browse Categories</li>
-                        <li>Search Tips</li>
-                        <li>Safety Guide</li>
-                        <li>Mobile App</li>
-                    </ul>
+                <div>
+                    <strong>For Buyers</strong>
+                    <p>Browse Categories</p>
+                    <p>Search Tips</p>
+                    <p>Safety Guide</p>
+                    <p>Mobile App</p>
                 </div>
-                <div class="footer-column">
-                    <h4>For Sellers</h4>
-                    <ul>
-                        <li>Post Free Ad</li>
-                        <li>Selling Tips</li>
-                        <li>Premium Plans</li>
-                        <li>Success Stories</li>
-                    </ul>
+                <div>
+                    <strong>For Sellers</strong>
+                    <p>Post Free Ad</p>
+                    <p>Selling Tips</p>
+                    <p>Premium Plans</p>
+                    <p>Success Stories</p>
                 </div>
-                <div class="footer-column">
-                    <h4>Support</h4>
-                    <ul>
-                        <li>Help Center</li>
-                        <li>Contact Us</li>
-                        <li>Report Issue</li>
-                        <li>Privacy Policy</li>
-                    </ul>
+                <div>
+                    <strong>Support</strong>
+                    <p>Help Center</p>
+                    <p>Contact Us</p>
+                    <p>Report Issue</p>
+                    <p>Privacy Policy</p>
                 </div>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 Vendora. All rights reserved.</p>
+            &copy; 2025 Vendora. All rights reserved.
         </div>
     </footer>
 
-</body>
+    <!-- ✅ All your code remains the same above -->
+    
+    <!-- Notification Popup -->
+    <div class="popup" id="popupBanner">🎉 Account created successfully!</div>
+    
+    <script>
+    
+        // Handle form submit
+        document.getElementById("signupForm").addEventListener("submit", function (e) {
+            e.preventDefault();
 
+            const email = document.getElementById("Email").value;
+            const password = document.getElementById("Password").value;
+            const confirm = document.getElementById("ConfirmPassword").value;
+
+            if (password !== confirm) {
+                alert("❌ Passwords do not match!");
+                return;
+            }
+
+            // Save email & password to localStorage (for learning/testing only)
+            localStorage.setItem("VendoraUserEmail", email);
+            localStorage.setItem("VendoraUserPassword", password);
+
+            // Show popup banner
+            const popup = document.getElementById("popupBanner");
+            popup.style.display = "block";
+
+            setTimeout(() => {
+                popup.style.display = "none";
+            },3000);
+
+            // Optionally reset form
+            // this.reset();
+        });
+    </script>
+    </body>
 </html>
